@@ -1,0 +1,18 @@
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <div>
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="/imgs/logo.png" alt="Logo" (click)="inicio()">
+            </a>
+        </div>
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="botones">
+            <button class="btnReserva btn btn-outline-primary me-2" (click)="reservaHora()">Reserva de Hora</button>
+            <button class="btnIniciarSesion btn btn-outline-primary me-2" (click)="iniciaSesion()">Iniciar
+                Sesión</button>
+            <button class="btnStaff btn btn-outline-primary" (click)="staff()">Staff</button>
+        </div>
+    </div>
+</nav>

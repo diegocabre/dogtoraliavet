@@ -1,0 +1,30 @@
+nav {
+  background-color: #2893b9;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease;
+}
+/* Cambiar el color y tamaño de las letras en la barra de navegación */
+.navbar-nav .nav-link {
+  color: #fff; /* Cambia esto al color que desees */
+  font-size: 20px; /* Cambia esto al tamaño de letra que desees */
+}
+
+/* Para el texto del menú desplegable */
+.dropdown-item {
+  color: #fff; /* Cambia esto al color que desees */
+  font-size: 18px; /* Cambia esto al tamaño de letra que desees */
+}
+
+/* Asegúrate de que los enlaces activos también cambien de color */
+.navbar-nav .nav-link.active {
+  color: #fff; /* Cambia esto al color que desees */
+}
+.dropdown-menu {
+  background-color: #2893b9; /* Cambia esto al color que desees */
+}

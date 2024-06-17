@@ -1,0 +1,91 @@
+:root {
+  --primary-color: #2893b9;
+  --secondary-color: #d0911a;
+  --tertiary-color: #434142;
+  --fourth-color: #6c9e3d;
+
+  --primary-font: "Nunito", sans-serif;
+
+  --primary-font-size: 16px;
+  --primary-line-height: 1.5;
+}
+
+@media (max-width: 425px) {
+  .btnReserva {
+    background-color: #6c9e3d;
+    color: white;
+  }
+
+  .btnIniciarSesion {
+    background-color: #d0911a;
+    color: white;
+  }
+
+  .btnStaff {
+    background-color: #434142;
+    color: white;
+  }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #botones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 426px) {
+  .container-fluid {
+    justify-content: center;
+  }
+
+  .logo {
+    width: 300px;
+    height: auto;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+  .btnReserva {
+    background-color: #2893b9;
+    color: white;
+  }
+
+  .btnIniciarSesion {
+    background-color: #d0911a;
+    color: white;
+  }
+
+  .btnStaff {
+    background-color: #434142;
+    color: white;
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #botones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

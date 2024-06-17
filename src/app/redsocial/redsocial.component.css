@@ -1,0 +1,29 @@
+.redes-sociales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.redes-sociales a {
+  margin-right: 10px; /* Espacio entre los íconos */
+}
+
+.redes-sociales a i {
+  font-size: 24px; /* Tamaño de los íconos */
+}
+
+/* Estilos para el ícono de Facebook */
+.redes-sociales a.facebook i {
+  color: #3b5998; /* Azul de Facebook */
+}
+
+/* Estilos para el ícono de Instagram */
+.redes-sociales a.instagram i {
+  color: #e4405f; /* Rosa de Instagram */
+}
+
+/* Estilos para el ícono de WhatsApp */
+.redes-sociales a.whatsapp i {
+  color: #25d366; /* Verde de WhatsApp */
+}
