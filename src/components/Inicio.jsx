@@ -1,4 +1,3 @@
-
 // src\components\Inicio.jsx
 import "../assets/css/Inicio.css";
 export default function Inicio() {
@@ -10,7 +9,11 @@ export default function Inicio() {
             <h1>Dogtoralia</h1>
           </div>
           <div className="img">
-            <img className="img-inicio" src="src\assets\imgs\Bienvenida.jpg" alt="" />
+            <img
+              className="img-inicio"
+              src="public\imgs\Bienvenida.jpg"
+              alt=""
+            />
           </div>
         </section>
       </div>
