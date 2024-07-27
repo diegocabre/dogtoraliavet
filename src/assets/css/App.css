@@ -1,0 +1,12 @@
+:root {
+  --primer-color: #2893b9;
+  --segundo-color: #d0911a;
+  --tercer-color: #6c9e3d;
+  --cuarto-color: #434142;
+
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Lato", sans-serif;
+
+  --primary-font-size: 20px;
+  --secondary-font-size: 16px;
+}

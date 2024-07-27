@@ -1,0 +1,126 @@
+/* Importar variables de otro CSS */
+@import "../css/App.css";
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 250px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure that buttons wrap to the next line when needed */
+  width: 100%;
+}
+
+.nav-button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  font-size: var(--primary-font-size);
+  font-family: var(--primary-font);
+  cursor: pointer;
+  flex: 1; /* Make buttons take up equal space */
+  min-width: 100px; /* Minimum width to maintain readability */
+  text-align: center; /* Center text within buttons */
+}
+
+/* Especificar estilos adicionales para los botones */
+.nav-button.iniciarsesion {
+  color: var(--cuarto-color);
+  border: 1px solid var(--cuarto-color);
+  background-color: var(--tercer-color);
+}
+
+.nav-button.reservarhora {
+  color: var(--cuarto-color);
+  border: 1px solid var(--cuarto-color);
+  background-color: var(--segundo-color);
+}
+
+.nav-button.staff {
+  color: var(--cuarto-color);
+  border: 1px solid var(--cuarto-color);
+  background-color: var(--primer-color);
+}
+
+@media (max-width: 425px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-button {
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 20px;
+  }
+
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  .nav-button {
+    display: inline-block;
+    margin-left: 10px;
+    flex: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 20px;
+  }
+
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-button {
+    display: inline-block;
+    margin-left: 10px;
+    flex: 1;
+  }
+}
