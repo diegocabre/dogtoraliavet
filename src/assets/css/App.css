@@ -10,6 +10,7 @@
   --primary-font-size: 20px;
   --secondary-font-size: 16px;
 }
+
 /* Header.css */
 .header {
   display: flex;
@@ -118,7 +119,6 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: var(--cuarto-color);
 }
 
 .inicio-section {
@@ -154,6 +154,7 @@
   justify-content: space-between;
   padding: 10px 20px;
   background-color: var(--cuarto-color);
+  width: 100%;
 }
 
 .custom-navlink {
@@ -192,7 +193,7 @@
   color: white;
 }
 
-/* redessociales */
+/* Redessociales.css */
 .redessociales {
   display: flex;
   justify-content: center;
@@ -314,4 +315,109 @@
   .iconName {
     font-size: 14px;
   }
+}
+
+/* Login.css */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-title {
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size);
+  color: var(--primer-color);
+  margin-bottom: 20px;
+}
+
+.login-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--cuarto-color);
+  border-radius: 5px;
+  font-family: var(--secondary-font);
+  font-size: var(--secondary-font-size);
+}
+
+.login-button {
+  background-color: var(--primer-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size);
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: darken(var(--primer-color), 10%);
+}
+
+.error-message {
+  color: red;
+  font-family: var(--secondary-font);
+}
+
+.register-link {
+  margin-top: 10px;
+}
+
+/* Register.css */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.register-title {
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size);
+  color: var(--primer-color);
+  margin-bottom: 20px;
+}
+
+.register-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--cuarto-color);
+  border-radius: 5px;
+  font-family: var(--secondary-font);
+  font-size: var(--secondary-font-size);
+}
+
+.register-button {
+  background-color: var(--primer-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--primary-font);
+  font-size: var(--primary-font-size);
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: darken(var(--primer-color), 10%);
 }

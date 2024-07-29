@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
-import "../assets/css/Login.css";
+import "../assets/css/App.css";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -31,30 +31,32 @@ export const Login = () => {
   };
 
   return (
-    <>
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <h1 className="login-title">Iniciar Sesión</h1>
-          <input
-            className="login-input"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          <input
-            className="login-input"
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-          <button className="login-button" type="submit">
-            Iniciar Sesión
-          </button>
-          {error && <p className="error-message">{error}</p>}
-        </form>
-      </div>
-    </>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h1 className="login-title">Iniciar Sesión</h1>
+        <input
+          className="login-input"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <input
+          className="login-input"
+          type="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <button className="login-button" type="submit">
+          Iniciar Sesión
+        </button>
+        {error && <p className="error-message">{error}</p>}
+      </form>
+      <p className="register-link">
+        ¿No tienes una cuenta? <a href="/register">Regístrate</a>
+      </p>
+    </div>
   );
 };
+

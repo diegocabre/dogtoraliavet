@@ -1,34 +1,44 @@
-//formulario de contacto
 import "../assets/css/Contacto.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 export const Contacto = () => {
   return (
-    <>
-      <div className="contacto">
-        <h1>Contacto</h1>
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicNombre">
-            <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" placeholder="Escriba su nombre" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Escriber tu correo ejemplo@email.com"
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicTextArea">
-            <Form.Label>Mensaje</Form.Label>
-            <Form.Control as="textarea" rows={3} />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </div>
-    </>
+    <div className="contacto-container">
+      <h1 className="contacto-title">Contacto</h1>
+      <Form className="contacto-form">
+        <Form.Group className="contacto-form-group" controlId="formBasicNombre">
+          <Form.Label className="contacto-form-label">Nombre</Form.Label>
+          <Form.Control
+            className="contacto-form-control"
+            type="text"
+            placeholder="Escriba su nombre"
+          />
+        </Form.Group>
+        <Form.Group className="contacto-form-group" controlId="formBasicEmail">
+          <Form.Label className="contacto-form-label">Email</Form.Label>
+          <Form.Control
+            className="contacto-form-control"
+            type="email"
+            placeholder="Escriba tu correo ejemplo@email.com"
+          />
+        </Form.Group>
+        <Form.Group
+          className="contacto-form-group"
+          controlId="formBasicTextArea"
+        >
+          <Form.Label className="contacto-form-label">Mensaje</Form.Label>
+          <Form.Control
+            className="contacto-form-control"
+            as="textarea"
+            rows={3}
+            placeholder="Escriba su mensaje"
+          />
+        </Form.Group>
+        <Button className="contacto-button" variant="primary" type="submit">
+          Enviar
+        </Button>
+      </Form>
+    </div>
   );
 };
