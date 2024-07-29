@@ -1,6 +1,6 @@
 import Map from "../map/Map";
 
-const PuenteAlto = () => {
+export const PuenteAlto = () => {
   return (
     <div>
       <h1>Puente Alto</h1>
@@ -12,5 +12,3 @@ const PuenteAlto = () => {
     </div>
   );
 };
-
-export default PuenteAlto;

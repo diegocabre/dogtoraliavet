@@ -1,6 +1,6 @@
 import Map from "../map/Map";
 
-const Centro = () => {
+export const Centro = () => {
   return (
     <div>
       <h1>Dogtoralia Centro</h1>
@@ -12,5 +12,3 @@ const Centro = () => {
     </div>
   );
 };
-
-export default Centro;

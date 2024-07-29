@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
 import "../assets/css/Login.css";
 
-export default function Login() {
+export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -57,4 +57,4 @@ export default function Login() {
       </div>
     </>
   );
-}
+};

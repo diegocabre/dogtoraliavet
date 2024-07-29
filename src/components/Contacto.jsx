@@ -3,7 +3,7 @@ import "../assets/css/Contacto.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-export default function Contacto() {
+export const Contacto = () => {
   return (
     <>
       <div className="contacto">
@@ -31,4 +31,4 @@ export default function Contacto() {
       </div>
     </>
   );
-}
+};
