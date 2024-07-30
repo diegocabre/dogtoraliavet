@@ -1,33 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../auth/useAuth";
+import { AuthContext } from "../auth/useAuth";
 import "../assets/css/App.css";
 
 export const Login = () => {
+  const { loginEmailPassword } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const auth = useAuth();
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    auth
-      .login(email, password)
-      .then(() => {
-        navigate("/reservarhora");
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+
+    try {
+      const data = await loginEmailPassword(email, password);
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        navigate("/"); // Redirige a la ruta deseada después del inicio de sesión
+      } else {
+        setError(
+          data.message || "Error al iniciar sesión. Inténtalo de nuevo."
+        );
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError("Error al iniciar sesión. Inténtalo de nuevo.");
+    }
   };
 
   return (
@@ -39,14 +38,14 @@ export const Login = () => {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={handleEmailChange}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="login-input"
           type="password"
           placeholder="Contraseña"
           value={password}
-          onChange={handlePasswordChange}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button className="login-button" type="submit">
           Iniciar Sesión
@@ -59,4 +58,3 @@ export const Login = () => {
     </div>
   );
 };
-

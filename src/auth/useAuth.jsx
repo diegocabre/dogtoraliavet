@@ -1,33 +1,66 @@
-// useAuth.js
-import { createContext, useContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+// Crea y exporta el contexto
+export const AuthContext = createContext();
+const initialStateToken = localStorage.getItem("token") || null;
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+const UseAuth = ({ children }) => {
+  const [token, setToken] = useState(initialStateToken);
 
-  const login = (email, password) => {
-    // Implementa tu lógica de autenticación aquí y devuelve una promesa
-    return new Promise((resolve, reject) => {
-      // Ejemplo de lógica de autenticación simulada
-      if (email === "test@example.com" && password === "password") {
-        setUser({ email });
-        resolve();
-      } else {
-        reject(new Error("Email o contraseña incorrectos"));
-      }
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    } else {
+      localStorage.removeItem("token");
+    }
+  }, [token]);
+
+  const loginEmailPassword = async (email, password) => {
+    const response = await fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
     });
+
+    const data = await response.json();
+    setToken(data.token || null);
+
+    return data;
+  };
+
+  const registerWithEmailPassword = async (
+    email,
+    password,
+    nombre,
+    apellidos,
+    rut
+  ) => {
+    const response = await fetch("http://localhost:3000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password, nombre, apellidos, rut }),
+    });
+
+    const data = await response.json();
+
+    return data;
   };
 
   const logout = () => {
-    setUser(null);
+    setToken(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider
+      value={{ token, loginEmailPassword, registerWithEmailPassword, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export default UseAuth;

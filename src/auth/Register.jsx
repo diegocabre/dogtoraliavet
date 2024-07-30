@@ -1,16 +1,25 @@
-import { useState } from "react";
-import "../assets/css/App.css"; // Asegúrate de tener este archivo CSS
+import { useState, useContext } from "react";
+import { AuthContext } from "../auth/useAuth";
+import "../assets/css/App.css";
 
 export const Register = () => {
+  const { registerWithEmailPassword } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rut, setRut] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellidos, setApellidos] = useState("");
+  const [error, setError] = useState(""); // Añadir estado para manejar errores
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    // Implementar lógica de registro aquí
+    try {
+      await registerWithEmailPassword(email, password, rut, nombre, apellidos);
+      // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
+    } catch (error) {
+      console.error(error);
+      setError("Error al registrar el usuario. Inténtalo de nuevo."); // Manejar el error
+    }
   };
 
   return (
@@ -60,6 +69,8 @@ export const Register = () => {
         <button className="register-button" type="submit">
           Registrar
         </button>
+        {error && <p className="error-message">{error}</p>}{" "}
+        {/* Mostrar mensaje de error */}
       </form>
     </div>
   );
