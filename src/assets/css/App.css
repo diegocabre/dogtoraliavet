@@ -115,36 +115,77 @@
 
 /* Inicio.css */
 .inicio-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 .inicio-section {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-.inicio-title h1 {
-  font-family: var(--primary-font);
-  font-size: 36px;
-  color: var(--primer-color);
+.inicio-title h1,
+.vision-title h2,
+.mision-title h2,
+.valores-title h2 {
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.inicio-img-container {
-  display: flex;
-  justify-content: center;
+.inicio-text p,
+.vision-text p,
+.mision-text p,
+.valores-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-.inicio-img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.valores-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  list-style: none;
+}
+
+.valores-section li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.valores-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.valores-section img:hover {
+  transform: scale(1.1);
+}
+
+.valores-section h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .valores-section ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .valores-section img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .valores-section h3 {
+    font-size: 1rem;
+  }
 }
 
 /* Menu.css */

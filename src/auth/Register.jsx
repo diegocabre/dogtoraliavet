@@ -11,11 +11,43 @@ export const Register = () => {
   const [apellidos, setApellidos] = useState("");
   const [error, setError] = useState(""); // Añadir estado para manejar errores
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+  const validateRut = (rut) => {
+    const re = /^\d{1,2}\.\d{3}\.\d{3}-[\dKk]$/;
+    return re.test(rut);
+  };
+
   const handleRegister = async (event) => {
     event.preventDefault();
+    if (!email || !password || !rut || !nombre || !apellidos) {
+      setError("Todos los campos son obligatorios.");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setError("El email no tiene un formato válido.");
+      return;
+    }
+    if (password.length < 6) {
+      setError("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
+    if (!validateRut(rut)) {
+      setError("El RUT no tiene un formato válido.");
+      return;
+    }
+
     try {
       await registerWithEmailPassword(email, password, rut, nombre, apellidos);
-      // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
+      setEmail("");
+      setPassword("");
+      setRut("");
+      setNombre("");
+      setApellidos("");
+      setError("");
+      alert("Usuario registrado correctamente");
     } catch (error) {
       console.error(error);
       setError("Error al registrar el usuario. Inténtalo de nuevo."); // Manejar el error

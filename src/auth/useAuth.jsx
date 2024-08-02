@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types"; // Importa PropTypes
+import { Navigate } from "react-router-dom";
 
 // Crea y exporta el contexto
 export const AuthContext = createContext();
@@ -16,7 +18,7 @@ const UseAuth = ({ children }) => {
   }, [token]);
 
   const loginEmailPassword = async (email, password) => {
-    const response = await fetch("http://localhost:3000/api/login", {
+    const response = await fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,16 +35,16 @@ const UseAuth = ({ children }) => {
   const registerWithEmailPassword = async (
     email,
     password,
+    rut,
     nombre,
-    apellidos,
-    rut
+    apellidos
   ) => {
-    const response = await fetch("http://localhost:3000/api/register", {
+    const response = await fetch("http://localhost:3000/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, nombre, apellidos, rut }),
+      body: JSON.stringify({ email, password, rut, nombre, apellidos }),
     });
 
     const data = await response.json();
@@ -52,6 +54,8 @@ const UseAuth = ({ children }) => {
 
   const logout = () => {
     setToken(null);
+    localStorage.removeItem("token");
+    Navigate("/login");
   };
 
   return (
@@ -61,6 +65,11 @@ const UseAuth = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+// Define la validación de props usando PropTypes
+UseAuth.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default UseAuth;

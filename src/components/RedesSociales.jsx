@@ -1,5 +1,6 @@
 import "../assets/css/App.css";
 import { NavLink } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const RedesSociales = () => {
   return (
@@ -12,7 +13,7 @@ export const RedesSociales = () => {
               to="https://www.instagram.com/dogtoralia/"
               target="_blank"
             >
-              <i className="fa-brands fa-instagram"></i>
+              <i className="bi bi-instagram"></i>
               <span className="iconName">Instagram</span>
             </NavLink>
           </li>
@@ -22,7 +23,7 @@ export const RedesSociales = () => {
               to="https://www.facebook.com/dogtoralia/"
               target="_blank"
             >
-              <i className="fa-brands fa-facebook"></i>
+              <i className="bi bi-facebook"></i>
               <span className="iconName">Facebook</span>
             </NavLink>
           </li>
@@ -32,7 +33,7 @@ export const RedesSociales = () => {
               to="https://wa.me/5491153028118"
               target="_blank"
             >
-              <i className="fa-brands fa-whatsapp"></i>
+              <i className="bi bi-whatsapp"></i>
               <span className="iconName">Whatsapp</span>
             </NavLink>
           </li>

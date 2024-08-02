@@ -1,4 +1,3 @@
-// En App.jsx
 import { useContext } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
@@ -10,16 +9,13 @@ import { PuenteAlto } from "./components/PuenteAlto";
 import { Centro } from "./components/Centro";
 import { RedesSociales } from "./components/RedesSociales";
 import { Register } from "./auth/Register";
+import { Usuarios } from "./page/Usuarios";
+import { ReservarHora } from "./auth/ReservarHora";
 
 import { AuthContext } from "./auth/useAuth";
 
 export const App = () => {
-  console.log("App component is rendering");
-
   const { token } = useContext(AuthContext);
-  if (!token) {
-    return <Navigate to="/login" />;
-  }
 
   return (
     <>
@@ -28,10 +24,16 @@ export const App = () => {
       <Menu />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/staff" element={<Login />} />
-        <Route path="/reservarhora" element={<Login />} />
+        <Route
+          path="/login"
+          element={token ? <Navigate to="/usuarios" /> : <Login />}
+        />
+        <Route path="/reservar" element={<ReservarHora />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/usuarios"
+          element={token ? <Usuarios /> : <Navigate to="/login" />}
+        />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/puentealto" element={<PuenteAlto />} />
         <Route path="/centro" element={<Centro />} />
