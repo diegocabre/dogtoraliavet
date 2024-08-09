@@ -24,20 +24,19 @@ export const App = () => {
       <Menu />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route
-          path="/login"
-          element={token ? <Navigate to="/usuarios" /> : <Login />}
-        />
-        <Route path="/reservar" element={<ReservarHora />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/puentealto" element={<PuenteAlto />} />
+        <Route path="/centro" element={<Centro />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/usuarios"
           element={token ? <Usuarios /> : <Navigate to="/login" />}
         />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/puentealto" element={<PuenteAlto />} />
-        <Route path="/centro" element={<Centro />} />
-        <Route path="*" element={<Inicio />} />
+        <Route
+          path="/reservar"
+          element={token ? <ReservarHora /> : <Navigate to="/login" />}
+        />
       </Routes>
     </>
   );

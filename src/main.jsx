@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./App.jsx";
-import UseAuth from "./auth/useAuth.jsx"; // Importa el componente UseAuth
 import { BrowserRouter as Router } from "react-router-dom";
+import { App } from "./App.jsx";
+import UseAuth from "./auth/useAuth.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UseAuth>
-      <Router>
+    <Router>
+      <UseAuth>
         <App />
-      </Router>
-    </UseAuth>
+      </UseAuth>
+    </Router>
   </React.StrictMode>
 );

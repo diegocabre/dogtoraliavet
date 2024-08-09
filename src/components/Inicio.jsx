@@ -49,26 +49,24 @@ export const Inicio = () => {
             <h2>Valores</h2>
           </div>
           <div className="valores-text">
-            <p>
-              <ul>
-                <li>
-                  <img src="imgs/Bienvenida.jpg" alt="Calidad" />
-                  <h3>Calidad</h3>
-                </li>
-                <li>
-                  <img src="imgs/Cirugias.jpg" alt="Compromiso" />
-                  <h3>Compromiso</h3>
-                </li>
-                <li>
-                  <img src="imgs/anestesia.jpg" alt="Respeto" />
-                  <h3>Respeto</h3>
-                </li>
-                <li>
-                  <img src="imgs/peluqueria.jpg" alt="Responsabilidad" />
-                  <h3>Responsabilidad</h3>
-                </li>
-              </ul>
-            </p>
+            <ul>
+              <li>
+                <img src="imgs/Bienvenida.jpg" alt="Calidad" />
+                <h3>Calidad</h3>
+              </li>
+              <li>
+                <img src="imgs/Cirugias.jpg" alt="Compromiso" />
+                <h3>Compromiso</h3>
+              </li>
+              <li>
+                <img src="imgs/anestesia.jpg" alt="Respeto" />
+                <h3>Respeto</h3>
+              </li>
+              <li>
+                <img src="imgs/peluqueria.jpg" alt="Responsabilidad" />
+                <h3>Responsabilidad</h3>
+              </li>
+            </ul>
           </div>
         </section>
       </section>

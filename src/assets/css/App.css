@@ -11,6 +11,14 @@
   --secondary-font-size: 16px;
 }
 
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}
+
 /* Header.css */
 .header {
   display: flex;
